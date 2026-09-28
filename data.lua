@@ -1,1 +1,1 @@
-require("prototypes.whitelist")
+require("prototypes.init")
