@@ -18,9 +18,9 @@ local whitelist = {
         ["stone-furnace"] = true,
         ["steel-furnace"] = true,
         ["electric-furnace"] = true,
-        ["assembling-machine-1"] = true,
-        ["assembling-machine-2"] = true,
-        ["assembling-machine-3"] = true,
+        --["assembling-machine-1"] = true,
+        --["assembling-machine-2"] = true,
+        --["assembling-machine-3"] = true,
     },
     item = {
         ["transport-belt"] = true,
@@ -40,10 +40,11 @@ local whitelist = {
         ["stone-furnace"] = true,
         ["steel-furnace"] = true,
         ["electric-furnace"] = true,
-        ["assembling-machine-1"] = true,
-        ["assembling-machine-2"] = true,
-        ["assembling-machine-3"] = true,
+        --["assembling-machine-1"] = true,
+        --["assembling-machine-2"] = true,
+        --["assembling-machine-3"] = true,
     },
+    machine = {},
     fluid = {
         ["water"] = true,
         ["steam"] = true,
@@ -51,6 +52,7 @@ local whitelist = {
     resource = {}
 }
 
+-- Everything in this section contains a whitelist
 for name, tech in pairs(data.raw.technology) do
     if not whitelist.tech[name] then
         tech.hidden = true
@@ -66,8 +68,14 @@ end
 
 for name, item in pairs(data.raw.item) do
     if not whitelist.item[name] then
-        item.hidden = true
+        --item.hidden = true
         item.hidden_in_factoriopedia = true
+    end
+end
+
+for name, machine in pairs(data.raw["assembling-machine"]) do
+    if not whitelist.machine[name] then
+        machine.hidden_in_factoriopedia = true
     end
 end
 
@@ -114,10 +122,14 @@ for _, planet in pairs(data.raw.planet) do
     end
 end
 
-
-
 for name, control in pairs(data.raw["autoplace-control"]) do
     if not whitelist.resource[name] then
         control.hidden = true
     end
+end
+
+-- Everything in this list removes all prototypes of the specified type
+for _, science in pairs(data.raw.tool) do
+    science.hidden = true
+    science.hidden_in_factoriopedia = true
 end
