@@ -49,7 +49,14 @@ local whitelist = {
         ["water"] = true,
         ["steam"] = true,
     },
-    resource = {}
+    autoplace = {
+        ["coal"] = true,
+        ["trees"] = true,
+        ["water"] = true,
+        ["rocks"] = true,
+        ["starting_area_moisture"] = true,
+        ["nauvis_cliff"] = true,
+    }
 }
 
 -- Everything in this section contains a whitelist
@@ -87,7 +94,7 @@ for name, fluid in pairs(data.raw.fluid) do
 end
 
 for name, resource in pairs(data.raw.resource) do
-    if not whitelist.resource[name] then
+    if not whitelist.autoplace[name] then
         resource.hidden = true
         resource.hidden_in_factoriopedia = true
     end
@@ -99,7 +106,7 @@ for _, planet in pairs(data.raw.planet) do
         -- Remove from the planet's autoplace controls
         if planet.map_gen_settings.autoplace_controls then
             for resource_name, _ in pairs(planet.map_gen_settings.autoplace_controls) do
-                if not whitelist.resource[resource_name] then
+                if not whitelist.autoplace[resource_name] then
                     planet.map_gen_settings.autoplace_controls[resource_name] = nil
                 end
             end
@@ -113,7 +120,7 @@ for _, planet in pairs(data.raw.planet) do
             for resource_name, _ in pairs(
                 planet.map_gen_settings.autoplace_settings.entity.settings
             ) do
-                if not whitelist.resource[resource_name] then
+                if not whitelist.autoplace[resource_name] then
                     planet.map_gen_settings.autoplace_settings.entity.settings[resource_name] = nil
                 end
             end
@@ -123,13 +130,15 @@ for _, planet in pairs(data.raw.planet) do
 end
 
 for name, control in pairs(data.raw["autoplace-control"]) do
-    if not whitelist.resource[name] then
+    if not whitelist.autoplace[name] then
         control.hidden = true
     end
 end
 
 -- Everything in this list removes all prototypes of the specified type
-for _, science in pairs(data.raw.tool) do
-    science.hidden = true
-    science.hidden_in_factoriopedia = true
+for _, science in pairs(data.raw.item) do
+    if science.subgroup == "science-pack" then
+        science.hidden = true
+        science.hidden_in_factoriopedia = true
+    end
 end

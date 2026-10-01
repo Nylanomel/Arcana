@@ -5,9 +5,9 @@
   "author": "nylanomel",
   "homepage": "https://github.com/Nylanomel/Arcana",
   "description": "Mechanics meet magic",
-  "factorio_version": "2.0",
+  "factorio_version": "2.1",
   "dependencies": [
-    "base"
+    "base >= 2.1.7"
   ],
   "expansion_required": false,
   "quality_required": false,

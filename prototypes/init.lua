@@ -1,2 +1,5 @@
 require("whitelist")
 require("resources.init")
+require("technologies.init")
+require("items.init")
+require("recipes.init")
