@@ -59,7 +59,7 @@ data.extend({
         name = "ar-arcane-interface",
         icon = "__base__/graphics/icons/lab.png",
         effects = {
-
+            {type = "unlock-recipe", recipe = "ar-arcane-interface"}
         },
         research_trigger = {
             type = "craft-item",
@@ -67,5 +67,19 @@ data.extend({
             count = 5
         },
         prerequisites = {"ar-mana-crystalization", "ar-ironwood-enchanting"}
+    },
+    {
+        type = "technology",
+        name = "ar-unstable-arcana",
+        icon = "__base__/graphics/icons/stone-3.png",
+        effects = {
+            {type = "unlock-recipe", recipe = "ar-unstable-arcana"}
+        },
+        research_trigger = {
+            type = "craft-item",
+            item = "ar-arcane-interface",
+            count = 1
+        },
+        prerequisites = {"ar-arcane-interface"}
     }
 })

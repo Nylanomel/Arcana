@@ -1,5 +1,7 @@
 local whitelist = {
-    tech = {},
+    tech = {
+        ["logistics"] = true
+    },
     recipe = {
         ["transport-belt"] = true,
         ["fast-transport-belt"] = true,
@@ -18,6 +20,7 @@ local whitelist = {
         ["stone-furnace"] = true,
         ["steel-furnace"] = true,
         ["electric-furnace"] = true,
+        ["burner-mining-drill"] = true,
         --["assembling-machine-1"] = true,
         --["assembling-machine-2"] = true,
         --["assembling-machine-3"] = true,
@@ -40,6 +43,7 @@ local whitelist = {
         ["stone-furnace"] = true,
         ["steel-furnace"] = true,
         ["electric-furnace"] = true,
+        ["burner-mining-drill"] = true,
         --["assembling-machine-1"] = true,
         --["assembling-machine-2"] = true,
         --["assembling-machine-3"] = true,
@@ -56,7 +60,7 @@ local whitelist = {
         ["rocks"] = true,
         ["starting_area_moisture"] = true,
         ["nauvis_cliff"] = true,
-    }
+    },
 }
 
 -- Everything in this section contains a whitelist

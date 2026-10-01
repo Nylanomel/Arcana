@@ -4,10 +4,10 @@ data.extend({
         name = "ar-chalk-stick",
         enabled = false,
         ingredients = {
-            {type = "item", name = "ar-chalk", amount = 4}
+            {type = "item", name = "ar-chalk", amount = 1}
         },
         results = {
-            {type = "item", name = "ar-chalk-stick", amount = 1}
+            {type = "item", name = "ar-chalk-stick", amount = 2}
         },
         energy_required = 1.75
     },
@@ -21,7 +21,8 @@ data.extend({
         results = {
             {type = "item", name = "ar-soulstone-tablet", amount = 1}
         },
-        energy_required = 5
+        energy_required = 5,
+        categories = {"smelting"}
     },
     {
         type = "recipe",
