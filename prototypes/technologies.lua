@@ -82,5 +82,23 @@ data.extend({
             count = 1
         },
         prerequisites = {"ar-arcane-interface"}
+    },
+    {
+        type = "technology",
+        name = "ar-mana-burning",
+        icon = "__base__/graphics/icons/boiler.png",
+        effects = {
+            {type = "unlock-recipe", recipe = "ar-mana-burner"},
+            {type = "unlock-recipe", recipe = "ar-conductive-fibers"},
+            {type = "unlock-recipe", recipe = "small-electric-pole"}
+        },
+        unit = {
+            count = 5,
+            ingredients = {
+                {"ar-unstable-arcana", 1}
+            },
+            time = 10
+        },
+        prerequisites = {"ar-unstable-arcana"}
     }
 })

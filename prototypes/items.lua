@@ -62,10 +62,24 @@ data.extend({
         type = "item",
         name = "ar-arcane-interface",
         icon = "__base__/graphics/icons/lab.png",
-        icon_size = 64,
         subgroup = "production-machine",
         order = "b[lab]-a[ar-arcane-interface]",
         place_result = "ar-arcane-interface",
         stack_size = 10
+    },
+    {
+        type = "item",
+        name = "ar-mana-burner",
+        icon = "__base__/graphics/icons/boiler.png",
+        subgroup = "energy",
+        order = "b[steam-power]-a[boiler]-a[ar-mana-burner]",
+        place_result = "ar-mana-burner",
+        stack_size = 10
+    },
+    {
+        type = "item",
+        name = "ar-conductive-fibers",
+        icon = "__base__/graphics/icons/copper-wire.png",
+        stack_size = 200
     }
 })

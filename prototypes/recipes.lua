@@ -114,5 +114,31 @@ data.extend({
         results = {
             {type = "item", name = "ar-arcane-interface", amount = 1}
         }
+    },
+    {
+        type = "recipe",
+        name = "ar-mana-burner",
+        enabled = false,
+        ingredients = {
+
+        },
+        results = {
+            {type = "item", name = "ar-mana-burner", amount = 1}
+        },
+        energy_required = 5
+    },
+    {
+        type = "recipe",
+        name = "ar-conductive-fibers",
+        enabled = false,
+        ingredients = {
+            {type = "item", name = "ar-ironwood", amount = 3},
+            {type = "item", name = "ar-mana-crystal", amount = 1},
+            {type = "item", name = "ar-basic-sigil", amount = 1}
+        },
+        results = {
+            {type = "item", name = "ar-conductive-fibers", amount_min = 1, amount_max = 3}
+        },
+        energy_required = 0.5
     }
 })
