@@ -3,6 +3,7 @@ local whitelist = {
         ["logistics"] = true
     },
     recipe = {
+        ["wooden-chest"] = true,
         ["transport-belt"] = true,
         ["fast-transport-belt"] = true,
         ["express-transport-belt"] = true,
@@ -26,6 +27,7 @@ local whitelist = {
         --["assembling-machine-3"] = true,
     },
     item = {
+        ["wooden-chest"] = true,
         ["transport-belt"] = true,
         ["fast-transport-belt"] = true,
         ["express-transport-belt"] = true,

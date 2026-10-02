@@ -27,7 +27,9 @@ local arcaneInterfaceRecipe = {
     name = "ar-arcane-interface",
     enabled = false,
     ingredients = {
-
+        {type = "item", name = "ar-ironwood", amount = 10},
+        {type = "item", name = "ar-mana-crystal", amount = 2},
+        {type = "item", name = "ar-basic-sigil", amount = 4}
     },
     results = {
         {type = "item", name = "ar-arcane-interface", amount = 1}

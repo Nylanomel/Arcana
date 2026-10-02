@@ -1,11 +1,12 @@
 require("preresearch")
-
-data.raw["technology"]["logistics"].unit.count = 10
-data.raw["technology"]["logistics"].unit.ingredients = {
+local logistics = data.raw["technology"]["logistics"]
+logistics.unit.count = 10
+logistics.unit.ingredients = {
     {"ar-unstable-arcana", 1}
 }
-data.raw["technology"]["logistics"].effects = {
+logistics.effects = {
     {type = "unlock-recipe", recipe = "transport-belt"},
     {type = "unlock-recipe", recipe = "underground-belt"},
     {type = "unlock-recipe", recipe = "splitter"}
 }
+logistics.prerequisites = {"ar-unstable-arcana"}

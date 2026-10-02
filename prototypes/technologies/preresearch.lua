@@ -18,7 +18,8 @@ data.extend({
         effects = {
             {type = "unlock-recipe", recipe = "ar-chalk-stick"},
             {type = "unlock-recipe", recipe = "ar-soulstone-tablet"},
-            {type = "unlock-recipe", recipe = "ar-basic-sigil"}
+            {type = "unlock-recipe", recipe = "ar-basic-sigil"},
+            {type = "unlock-recipe", recipe = "burner-mining-drill"}
         },
         research_trigger = {
             type = "mine-entity",
