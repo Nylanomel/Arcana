@@ -1,6 +1,6 @@
 data.extend({
     {
         type = "fuel-category",
-        name = "mana"
+        name = "ar-mana"
     }
 })

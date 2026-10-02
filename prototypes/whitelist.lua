@@ -1,6 +1,7 @@
 local whitelist = {
     tech = {
-        ["logistics"] = true
+        ["logistics"] = true,
+        ["automation"] = true,
     },
     recipe = {
         ["wooden-chest"] = true,
