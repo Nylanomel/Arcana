@@ -1,9 +1,14 @@
 local whitelist = {
     tech = {
-        ["logistics"] = true,
-        ["automation"] = true,
+        ["steam-power"] = true,
+        ["electronics"] = true,
+        --["logistics"] = true,
+        --["automation"] = true,
+        --["fluid-handling"] = true,
     },
     recipe = {
+        ["iron-gear-wheel"] = true,
+        ["copper-cable"] = true,
         ["wooden-chest"] = true,
         ["small-electric-pole"] = true,
         ["transport-belt"] = true,
@@ -20,6 +25,10 @@ local whitelist = {
         ["fast-inserter"] = true,
         ["long-handed-inserter"] = true,
         ["bulk-inserter"] = true,
+        ["pipe"] = true,
+        ["pipe-to-ground"] = true,
+        ["boiler"] = true,
+        ["steam-engine"] = true,
         ["stone-furnace"] = true,
         ["steel-furnace"] = true,
         ["electric-furnace"] = true,
@@ -27,8 +36,11 @@ local whitelist = {
         ["assembling-machine-1"] = true,
         --["assembling-machine-2"] = true,
         --["assembling-machine-3"] = true,
+        ["lab"] = true,
     },
     item = {
+        ["iron-gear-wheel"] = true,
+        ["copper-cable"] = true,
         ["wooden-chest"] = true,
         ["small-electric-pole"] = true,
         ["transport-belt"] = true,
@@ -45,6 +57,11 @@ local whitelist = {
         ["fast-inserter"] = true,
         ["long-handed-inserter"] = true,
         ["bulk-inserter"] = true,
+        ["offshore-pump"] = true,
+        ["pipe"] = true,
+        ["pipe-to-ground"] = true,
+        ["boiler"] = true,
+        ["steam-engine"] = true,
         ["stone-furnace"] = true,
         ["steel-furnace"] = true,
         ["electric-furnace"] = true,
@@ -52,24 +69,37 @@ local whitelist = {
         ["assembling-machine-1"] = true,
         --["assembling-machine-2"] = true,
         --["assembling-machine-3"] = true,
+        ["lab"] = true,
     },
-    machine = {},
+    machine = {
+        ["assembling-machine-1"] = true,
+    },
     fluid = {
         ["water"] = true,
         ["steam"] = true,
     },
     autoplace = {
         ["coal"] = true,
+        ["stone"] = true,
+        ["crude-oil"] = true,
         ["trees"] = true,
         ["water"] = true,
         ["rocks"] = true,
         ["starting_area_moisture"] = true,
         ["nauvis_cliff"] = true,
+        ["enemy_base"] = true,
     },
 }
 
 -- Everything in this section contains a whitelist
 for name, tech in pairs(data.raw.technology) do
+    tech.unit = {
+        count = 1,
+        ingredients = {
+            {"ar-unstable-arcana", 1},
+        },
+        time = 1
+    }
     if not whitelist.tech[name] then
         tech.hidden = true
     end

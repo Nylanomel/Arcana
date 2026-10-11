@@ -7,7 +7,11 @@
   "description": "Mechanics meet magic",
   "factorio_version": "2.1",
   "dependencies": [
-    "base >= 2.1.7"
+    "base >= 2.1.7",
+    "!space-age",
+    "!quality",
+    "?elevated-rails",
+    "?milestones"
   ],
   "expansion_required": false,
   "quality_required": false,

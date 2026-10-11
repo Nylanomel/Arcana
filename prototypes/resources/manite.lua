@@ -4,16 +4,16 @@ data:extend({
     {
         type = "item",
         name = "ar-manite",
-        icon = "__base__/graphics/icons/iron-ore.png",
+        icon = "__base__/graphics/icons/uranium-ore.png",
         tint = {r = 0.7, g = 0.1, b = 0.7},
         subgroup = "raw-resource",
-        order = "aa[ar-manite]",
+        order = "ab[ar-manite]",
         stack_size = 100
     },
     {
         type = "resource",
         name = "ar-manite",
-        icon = "__base__/graphics/icons/iron-ore.png",
+        icon = "__base__/graphics/icons/uranium-ore.png",
         tint = {r = 0.7, g = 0.1, b = 0.7},
         flags = {"placeable-neutral"},
         order = "a-a-a",
@@ -37,15 +37,14 @@ data:extend({
             random_spot_size_minimum = 1.0,
             random_spot_size_maximum = 4.0,
             regular_blob_amplitude_multiplier = 4.0,
-            regular_rq_factor_multiplier = 0.9,
+            regular_rq_factor_multiplier = 1.1,
             starting_blob_amplitude_multiplier = 4.0,
-            starting_rq_factor_multiplier = 0.9,
-            candidate_spot_count = 22,
+            starting_rq_factor_multiplier = 1.1,
         }),
         stage_counts = {15000, 9500, 5500, 2900, 1300, 400, 150, 80},
         stages = {
             sheet = {
-                filename = "__base__/graphics/entity/iron-ore/iron-ore.png",
+                filename = "__base__/graphics/entity/uranium-ore/uranium-ore.png",
                 tint = {r = 0.7, g = 0.1, b = 0.7},
                 priority = "extra-high",
                 width = 128,
@@ -61,7 +60,7 @@ data:extend({
         type = "autoplace-control",
         name = "ar-manite",
         localised_name = {"", "[entity=ar-manite]", {"autoplace-control-names.ar-manite"}},
-        order = "a",
+        order = "b",
         richness = true,
         category = "resource"
     }
