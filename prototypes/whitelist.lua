@@ -1,15 +1,21 @@
 local whitelist = {
     tech = {
-        ["steam-power"] = true,
-        ["electronics"] = true,
-        --["logistics"] = true,
-        --["automation"] = true,
-        --["fluid-handling"] = true,
+        ["automation"] = true,
+        ["logistics"] = true,
+        ["gun-turret"] = true,
+        ["stone-wall"] = true,
+        ["electric-mining-drill"] = true,
+        ["fast-inserter"] = true,
+        ["radar"] = true,
+        ["lamp"] = true,
     },
     recipe = {
+        ["iron-plate"] = true,
+        ["copper-plate"] = true,
         ["iron-gear-wheel"] = true,
         ["copper-cable"] = true,
         ["wooden-chest"] = true,
+        ["stone-brick"] = true,
         ["small-electric-pole"] = true,
         ["transport-belt"] = true,
         ["fast-transport-belt"] = true,
@@ -39,9 +45,12 @@ local whitelist = {
         ["lab"] = true,
     },
     item = {
+        ["iron-plate"] = true,
+        ["copper-plate"] = true,
         ["iron-gear-wheel"] = true,
         ["copper-cable"] = true,
         ["wooden-chest"] = true,
+        ["stone-brick"] = true,
         ["small-electric-pole"] = true,
         ["transport-belt"] = true,
         ["fast-transport-belt"] = true,
@@ -78,33 +87,27 @@ local whitelist = {
         ["water"] = true,
         ["steam"] = true,
     },
+}
+
+local blacklist = {
     autoplace = {
-        ["coal"] = true,
-        ["stone"] = true,
-        ["crude-oil"] = true,
-        ["trees"] = true,
-        ["water"] = true,
-        ["rocks"] = true,
-        ["starting_area_moisture"] = true,
-        ["nauvis_cliff"] = true,
-        ["enemy_base"] = true,
-    },
+        ["uranium-ore"] = true,
+        ["iron-ore"] = true,
+        ["copper-ore"] = true,
+    }
 }
 
 -- Everything in this section contains a whitelist
 for name, tech in pairs(data.raw.technology) do
-    tech.unit = {
-        count = 1,
-        ingredients = {
-            {"ar-unstable-arcana", 1},
-        },
-        time = 1
-    }
+    if tech.unit ~= nil then
+        tech.unit.ingredients = {
+        }
+    end
     if not whitelist.tech[name] then
         tech.hidden = true
     end
 end
-
+--[[
 for name, recipe in pairs(data.raw.recipe) do
     if not whitelist.recipe[name] then
         recipe.hidden = true
@@ -138,14 +141,14 @@ for name, resource in pairs(data.raw.resource) do
         resource.hidden_in_factoriopedia = true
     end
 end
-
+]]
 for _, planet in pairs(data.raw.planet) do
     if planet.map_gen_settings then
 
         -- Remove from the planet's autoplace controls
         if planet.map_gen_settings.autoplace_controls then
             for resource_name, _ in pairs(planet.map_gen_settings.autoplace_controls) do
-                if not whitelist.autoplace[resource_name] then
+                if blacklist.autoplace[resource_name] then
                     planet.map_gen_settings.autoplace_controls[resource_name] = nil
                 end
             end
@@ -159,7 +162,7 @@ for _, planet in pairs(data.raw.planet) do
             for resource_name, _ in pairs(
                 planet.map_gen_settings.autoplace_settings.entity.settings
             ) do
-                if not whitelist.autoplace[resource_name] then
+                if blacklist.autoplace[resource_name] then
                     planet.map_gen_settings.autoplace_settings.entity.settings[resource_name] = nil
                 end
             end
@@ -169,7 +172,7 @@ for _, planet in pairs(data.raw.planet) do
 end
 
 for name, control in pairs(data.raw["autoplace-control"]) do
-    if not whitelist.autoplace[name] then
+    if blacklist.autoplace[name] then
         control.hidden = true
     end
 end
