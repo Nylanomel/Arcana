@@ -94,6 +94,7 @@ local blacklist = {
         ["uranium-ore"] = true,
         ["iron-ore"] = true,
         ["copper-ore"] = true,
+        ["enemy-base"] = true
     }
 }
 

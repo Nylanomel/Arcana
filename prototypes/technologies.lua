@@ -99,10 +99,10 @@ data.extend({
     },
     {
         type = "technology",
-        name = "ar-arcane-circuitry",
-        icon = "__base__/graphics/icons/processing-unit.png",
+        name = "ar-inert-circuitry",
+        icon = "__base__/graphics/icons/electronic-circuit.png",
         effects = {
-
+            {type = "unlock-recipe", recipe = "ar-inert-circuit"}
         },
         unit = {
             count = 20,
@@ -118,9 +118,11 @@ data.extend({
     {
         type = "technology",
         name = "ar-glassware",
-        icon = "__base__/graphics/icons/military-science-pack.png",
+        icon = "__quality_glassware__/graphics/technology/tube_three_empty.png",
+        icon_size = 256,
         effects = {
-
+            {type = "unlock-recipe", recipe = "ar-glass"},
+            {type = "unlock-recipe", recipe = "ar-empty-flask"}
         },
         unit = {
             count = 15,
@@ -136,9 +138,10 @@ data.extend({
     {
         type = "technology",
         name = "ar-mana-condensation",
-        icon = "__base__/graphics/icons/production-science-pack.png",
+        icon = "__quality_glassware__/graphics/technology/sphere_normal_clear_purple.png",
+        icon_size = 256,
         effects = {
-
+            {type = "unlock-recipe", recipe = "ar-mana-condensation"}
         },
         unit = {
             count = 15,
@@ -153,10 +156,10 @@ data.extend({
     },
     {
         type = "technology",
-        name = "ar-fundamentium-arcana",
-        icon = "__base__/graphics/icons/uranium-ore-2.png",
+        name = "ar-circuit-enchanting",
+        icon = "__base__/graphics/icons/processing-unit.png",
         effects = {
-
+            {type = "unlock-recipe", recipe = "ar-enchanted-circuit"}
         },
         unit = {
             count = 30,
@@ -166,8 +169,26 @@ data.extend({
             time = 15
         },
         prerequisites = {
-            "ar-arcane-circuitry",
+            "ar-inert-circuitry",
             "ar-mana-condensation"
+        }
+    },
+    {
+        type = "technology",
+        name = "ar-fundamentium-arcana",
+        icon = "__base__/graphics/icons/uranium-ore-2.png",
+        effects = {
+            {type = "unlock-recipe", recipe = "ar-fundamentium-arcana"}
+        },
+        unit = {
+            count = 50,
+            ingredients = {
+                {"ar-unstable-arcana", 1}
+            },
+            time = 15
+        },
+        prerequisites = {
+            "ar-circuit-enchanting"
         }
     }
 })

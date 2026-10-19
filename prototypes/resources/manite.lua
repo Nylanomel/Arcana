@@ -5,7 +5,6 @@ data:extend({
         type = "item",
         name = "ar-manite",
         icon = "__base__/graphics/icons/uranium-ore.png",
-        tint = {r = 0.7, g = 0.1, b = 0.7},
         subgroup = "raw-resource",
         order = "ab[ar-manite]",
         stack_size = 100

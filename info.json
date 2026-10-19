@@ -8,6 +8,7 @@
   "factorio_version": "2.1",
   "dependencies": [
     "base >= 2.1.7",
+    "quality_glassware >= 0.1.1",
     "!space-age",
     "!quality",
     "?elevated-rails",

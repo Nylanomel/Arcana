@@ -20,6 +20,8 @@ data.raw["lab"]["lab"].inputs = {
     "ar-astra-arcana"
 }
 
+--- Item changes
+local item = data.raw["item"]
 --- Recipe changes
 local recipe = data.raw["recipe"]
 recipe["lab"].ingredients = {
@@ -29,13 +31,39 @@ recipe["lab"].ingredients = {
     {type = "item", name = "copper-cable", amount = 5}
 }
 recipe["inserter"].ingredients = {
-    {type = "item", name = "iron-plate", amount = 2},
+    {type = "item", name = "iron-plate", amount = 1},
     {type = "item", name = "iron-gear-wheel", amount = 1},
-    {type = "item", name = "copper-cable", amount = 3}
+    {type = "item", name = "ar-inert-circuit", amount = 1}
 }
 recipe["small-lamp"].ingredients = {
+    {type = "item", name = "iron-plate", amount = 1},
+    {type = "item", name = "copper-cable", amount = 3},
+    {type = "item", name = "ar-inert-circuit", amount = 1}
+}
+recipe["electric-mining-drill"].ingredients = {
+    {type = "item", name = "ar-inert-circuit", amount = 3},
+    {type = "item", name = "iron-gear-wheel", amount = 5},
+    {type = "item", name = "iron-plate", amount = 10}
+}
+recipe["assembling-machine-1"].ingredients = {
+    {type = "item", name = "iron-plate", amount = 9}, 
+    {type = "item", name = "iron-gear-wheel", amount = 5},
+    {type = "item", name = "ar-basic-sigil", amount = 2}
+}
+recipe["radar"].ingredients = {
+    {type = "item", name = "iron-plate", amount = 10},
+    {type = "item", name = "iron-gear-wheel", amount = 5},
+    {type = "item", name = "ar-inert-circuit", amount = 5}
+}
+recipe["splitter"].ingredients = {
+    {type = "item", name = "iron-plate", amount = 5},
+    {type = "item", name = "ar-inert-circuit", amount = 5},
+    {type = "item", name = "transport-belt", amount = 4}
+}
+recipe["fast-inserter"].ingredients = {
     {type = "item", name = "iron-plate", amount = 2},
-    {type = "item", name = "copper-cable", amount = 6}
+    {type = "item", name = "ar-inert-circuit", amount = 2},
+    {type = "item", name = "inserter", amount = 1}
 }
 
 --- Technology changes
@@ -54,13 +82,13 @@ tech["stone-wall"].prerequisites = {
     "ar-unstable-arcana"
 }
 tech["electric-mining-drill"].prerequisites = {
-    "ar-arcane-circuitry"
+    "ar-inert-circuitry"
 }
 tech["fast-inserter"].prerequisites = {
-    "ar-arcane-circuitry"
+    "ar-inert-circuitry"
 }
 tech["radar"].prerequisites = {
-    "ar-arcane-circuitry"
+    "ar-inert-circuitry"
 }
 tech["lamp"].prerequisites = {
     "ar-unstable-arcana"
