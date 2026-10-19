@@ -5,7 +5,7 @@ data.extend({
         enabled = true,
         categories = {"smelting"},
         ingredients = {
-            {type = "item", name = "ar-manite", amount = 2}            
+            {type = "item", name = "ar-manite", amount = 2}
         },
         results = {
             {type = "item", name = "ar-manite-pellet", amount = 1}
